@@ -1,0 +1,7 @@
+specimen,gRNA,nuclease
+Donor2_Oligo_2,Mock,Mock+
+Donor2_T1_2,TRAC_T1,Cas9v1+
+Donor2_T9_2,TRAC_T1;FOXP3_T9,Cas9v1+
+Donor2_Oligo,Mock,Mock-
+Donor2_T1,TRAC_T1,Cas9v1-
+Donor2_T9,TRAC_T1;FOXP3_T9,Cas9v1-

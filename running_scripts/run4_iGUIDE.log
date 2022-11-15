@@ -1,0 +1,6 @@
+
+  Error: Project directory currently exists: '/mnt/c/Raw_Datas/github/iGUIDE/analysis/run4_Avance_T1_T9'.
+Building DAG of jobs...
+MissingInputException in line 4 of /mnt/c/Raw_Datas/github/iGUIDE/rules/skip_demulti.rules:
+Missing input files for rule check_input_reads:
+configs/run4_Avance_T1_T9.config.yml

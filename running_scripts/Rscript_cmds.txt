@@ -1,0 +1,38 @@
+# report cmd
+R --slave --no-restore --file=/mnt/c/Raw_Datas/github/iGUIDE/tools/rscripts/generate_iGUIDE_report.R --args /mnt/c/Raw_Datas/github/iGUIDE/analysis/run8_Avance_T1_T9_bwa/output/iguide.eval.run8_Avance_T1_T9_bwa.rds -o /mnt/c/Raw_Datas/github/iGUIDE/analysis/run8_Avance_T1_T9_bwa/reports/report.run8_Avance_T1_T9_bwa.html -b -f -d -g
+
+
+# From bam to 
+Rscript /home/ec2-user/Processed_Data/iGUIDE_xl/tools/rscripts/samqc.R \
+/home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/process_data/align/Donor3_T9.bin1.bam \
+/home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/process_data/align/Donor3_T9.bin1.bai \
+-o /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/process_data/post_align/Donor3_T9.bin1.uniq.csv \
+--chimera /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/process_data/post_align/Donor3_T9.bin1.chimera.rds \
+--multihit /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/process_data/post_align/Donor3_T9.bin1.multihits.rds \
+-g hg38 --maxAlignStart 5       --minPercentIdentity 95 --minTempLength 30       --maxTempLength 2500       \
+--readNamePattern '[\w\:\-\+]+'       --stat /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/process_data/stats/Donor3_T9.bin1.align.stat > /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/logs/Donor3_T9.bin1.samqc.log 2>&1
+
+
+
+#iguide_evaluation
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/output/iguide.eval.run9_3_Avance_T1_T9.rds, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/output/run9_3_Avance_T1_T9.eval.stat
+    log: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/logs/run9_3_Avance_T1_T9.eval.log (check log file(s) for error message)
+
+RuleException:
+CalledProcessError in line 107 of /home/ec2-user/Processed_Data/iGUIDE_xl/rules/process.rules:
+Command 'set -euo pipefail;  Rscript /home/ec2-user/Processed_Data/iGUIDE_xl/tools/rscripts/evaluate_incorp_data.R /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/config.yml -o /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/output/iguide.eval.run9_3_Avance_T1_T9.rds -s /home/ec2-user/Processed_Data/iGUIDE_xl/running_scripts/Run9_3/run9_3_Avance_T1_T9.supp.csv --stat /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/output/run9_3_Avance_T1_T9.eval.stat > /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/logs/run9_3_Avance_T1_T9.eval.log 2>&1' returned non-zero exit status 1.
+
+
+
+#Generate Report
+Rscript /mnt/c/Raw_Datas/github/iGUIDE/tools/rscripts/generate_iGUIDE_report.R /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/iguide.eval.run9_1_Avance_T1_T9_bwa.rds -o /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/reports/report.run9_1_Avance_T1_T9_bwa.html -b -f -d -g  > /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.report.log 2>&1s
+
+## Demulti
+
+/home/ec2-user/miniconda3/envs/iguide/lib/R/bin/exec/R --slave --no-restore --file=/home/ec2-user/Processed_Data/iGUIDE_xl/tools/rscripts/demulti.R --args \
+-m /home/ec2-user/Processed_Data/iGUIDE_xl/running_scripts/Run9_3/run9_3_Avance_T1_T9.sampleInfo.csv \
+--read1 /home/ec2-user/Processed_Data/Run9_Donor3/Undetermined_S0_R1_001.fastq.gz --read2 /home/ec2-user/Processed_Data/Run9_Donor3/Undetermined_S0_R2_001.fastq.gz \
+--idx1 /home/ec2-user/Processed_Data/Run9_Donor3/Undetermined_S0_I1_001.fastq.gz --idx2 /home/ec2-user/Processed_Data/Run9_Donor3/Undetermined_S0_I2_001.fastq.gz \
+--bc1 I1 --bc1Len 8 --bc2 I2 --bc2Len 8 --bc1Mis 0 --bc2Mis 0 --maxN 1 \
+-o /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run9_3_Avance_T1_T9/process_data/demulti \
+--stat run9_3_Avance_T1_T9.demulti.stat -c 15 --readNamePattern [\w\:\-\+]+ --compress

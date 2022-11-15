@@ -1,0 +1,1695 @@
+Sample file '/mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_R1_001.fastq.gz' found.
+Sample file '/mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_R2_001.fastq.gz' found.
+Sample file '/mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_I1_001.fastq.gz' found.
+Sample file '/mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_I2_001.fastq.gz' found.
+  'run9_1_Avance_T1_T9_bwa' setup has completed.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=42000
+Job counts:
+	count	jobs
+	8	align
+	1	all
+	1	all_uniq_sites
+	1	assimilate_sites
+	8	bin_passing_reads
+	16	collect_consol_stub
+	8	collect_umitags
+	8	combine_multihits
+	1	core_stat_matrix
+	1	demultiplex
+	1	eval_stat_matrix
+	1	gen_stat_report
+	1	iguide_evaluation
+	8	index_bam
+	1	move_demulti_stat
+	8	post_align
+	1	run_report
+	1	run_summary
+	8	seq_filter
+	8	seq_trim_bp_read
+	8	seq_trim_ic_read_odn
+	8	seq_trim_ic_read_primer
+	8	sort_bam
+	115
+
+[Thu Oct 20 01:19:32 2022]
+rule demultiplex:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/running_scripts/Run9_1/run9_1_Avance_T1_T9.sampleInfo.csv, /mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_R1_001.fastq.gz, /mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_R2_001.fastq.gz, /mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_I1_001.fastq.gz, /mnt/c/Raw_Datas/genti122-off-target-analysis/iGUIDE/Data_Avance_Sep/Run9_Donor1/Undetermined_S0_I2_001.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control_2.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control_2.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo_2.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo_2.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1_2.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1_2.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9_2.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9_2.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/ambiguous.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/ambiguous.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/ambiguous.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/ambiguous.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/degenerate.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/degenerate.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/degenerate.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/degenerate.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/unassigned.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/unassigned.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/unassigned.I1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/unassigned.I2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/run9_1_Avance_T1_T9_bwa.demulti.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/demultiplex.run9_1_Avance_T1_T9_bwa.log
+    jobid: 106
+    threads: 6
+    resources: mem_mb=36000
+
+[Thu Oct 20 01:32:20 2022]
+Finished job 106.
+1 of 115 steps (0.87%) done
+
+[Thu Oct 20 01:32:20 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo_2.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo_2.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo_2.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo_2.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.bin.log
+    jobid: 30
+    wildcards: sample=Donor1_Oligo_2
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 01:32:20 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.bin.log
+    jobid: 27
+    wildcards: sample=Donor1_T1
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 01:32:20 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Oligo.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.bin.log
+    jobid: 26
+    wildcards: sample=Donor1_Oligo
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 01:32:20 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.bin.log
+    jobid: 28
+    wildcards: sample=Donor1_T9
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 01:32:20 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T1_2.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1_2.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1_2.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1_2.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.bin.log
+    jobid: 31
+    wildcards: sample=Donor1_T1_2
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 01:32:20 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_T9_2.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9_2.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9_2.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9_2.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.bin.log
+    jobid: 32
+    wildcards: sample=Donor1_T9_2
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:33:30 2022]
+Finished job 30.
+2 of 115 steps (2%) done
+
+[Thu Oct 20 01:33:30 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo_2.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Oligo_2.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.R2.bin1.primer.trim.log
+    jobid: 47
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:33:38 2022]
+Finished job 26.
+3 of 115 steps (3%) done
+
+[Thu Oct 20 01:33:38 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Oligo.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.R2.bin1.primer.trim.log
+    jobid: 43
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:33:44 2022]
+Finished job 28.
+4 of 115 steps (3%) done
+
+[Thu Oct 20 01:33:44 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T9.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.R2.bin1.primer.trim.log
+    jobid: 45
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:33:51 2022]
+Finished job 27.
+5 of 115 steps (4%) done
+
+[Thu Oct 20 01:33:51 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T1.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.R2.bin1.primer.trim.log
+    jobid: 44
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:34:01 2022]
+Finished job 32.
+6 of 115 steps (5%) done
+
+[Thu Oct 20 01:34:01 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9_2.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T9_2.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.R2.bin1.primer.trim.log
+    jobid: 49
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:34:02 2022]
+Finished job 31.
+7 of 115 steps (6%) done
+
+[Thu Oct 20 01:34:02 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.bin.log
+    jobid: 25
+    wildcards: sample=Donor1_Control
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:30 2022]
+Finished job 25.
+8 of 115 steps (7%) done
+
+[Thu Oct 20 01:34:30 2022]
+rule bin_passing_reads:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control_2.R1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control_2.R2.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/Donor1_Control_2.I2.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control_2.R1.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control_2.R2.bin1.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control_2.I2.bin1.fastq.gz
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.bin.log
+    jobid: 29
+    wildcards: sample=Donor1_Control_2
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:43 2022]
+Finished job 29.
+9 of 115 steps (8%) done
+
+[Thu Oct 20 01:34:43 2022]
+rule move_demulti_stat:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/demulti/run9_1_Avance_T1_T9_bwa.demulti.stat
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/run9_1_Avance_T1_T9_bwa.demulti.stat
+    jobid: 33
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:43 2022]
+Finished job 33.
+10 of 115 steps (9%) done
+
+[Thu Oct 20 01:34:44 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R2.bin1.consol.stat
+    jobid: 77
+    wildcards: sample=Donor1_Oligo_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:44 2022]
+Finished job 77.
+11 of 115 steps (10%) done
+
+[Thu Oct 20 01:34:44 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R1.bin1.consol.stat
+    jobid: 68
+    wildcards: sample=Donor1_Oligo, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:44 2022]
+Finished job 68.
+12 of 115 steps (10%) done
+
+[Thu Oct 20 01:34:44 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R2.bin1.consol.stat
+    jobid: 71
+    wildcards: sample=Donor1_T1, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:44 2022]
+Finished job 71.
+13 of 115 steps (11%) done
+
+[Thu Oct 20 01:34:44 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R1.bin1.consol.stat
+    jobid: 66
+    wildcards: sample=Donor1_Control, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:44 2022]
+Finished job 66.
+14 of 115 steps (12%) done
+
+[Thu Oct 20 01:34:44 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R1.bin1.consol.stat
+    jobid: 76
+    wildcards: sample=Donor1_Oligo_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:44 2022]
+Finished job 76.
+15 of 115 steps (13%) done
+
+[Thu Oct 20 01:34:44 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R2.bin1.consol.stat
+    jobid: 69
+    wildcards: sample=Donor1_Oligo, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:44 2022]
+Finished job 69.
+16 of 115 steps (14%) done
+
+[Thu Oct 20 01:34:44 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R2.bin1.consol.stat
+    jobid: 67
+    wildcards: sample=Donor1_Control, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:45 2022]
+Finished job 67.
+17 of 115 steps (15%) done
+
+[Thu Oct 20 01:34:45 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R1.bin1.consol.stat
+    jobid: 70
+    wildcards: sample=Donor1_T1, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:45 2022]
+Finished job 70.
+18 of 115 steps (16%) done
+
+[Thu Oct 20 01:34:45 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R2.bin1.consol.stat
+    jobid: 75
+    wildcards: sample=Donor1_Control_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:45 2022]
+Finished job 75.
+19 of 115 steps (17%) done
+
+[Thu Oct 20 01:34:45 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R2.bin1.consol.stat
+    jobid: 73
+    wildcards: sample=Donor1_T9, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:45 2022]
+Finished job 73.
+20 of 115 steps (17%) done
+
+[Thu Oct 20 01:34:45 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R1.bin1.consol.stat
+    jobid: 80
+    wildcards: sample=Donor1_T9_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:45 2022]
+Finished job 80.
+21 of 115 steps (18%) done
+
+[Thu Oct 20 01:34:45 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R2.bin1.consol.stat
+    jobid: 79
+    wildcards: sample=Donor1_T1_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:45 2022]
+Finished job 79.
+22 of 115 steps (19%) done
+
+[Thu Oct 20 01:34:45 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R1.bin1.consol.stat
+    jobid: 74
+    wildcards: sample=Donor1_Control_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:45 2022]
+Finished job 74.
+23 of 115 steps (20%) done
+
+[Thu Oct 20 01:34:45 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R1.bin1.consol.stat
+    jobid: 72
+    wildcards: sample=Donor1_T9, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:46 2022]
+Finished job 72.
+24 of 115 steps (21%) done
+
+[Thu Oct 20 01:34:46 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R2.bin1.consol.stat
+    jobid: 81
+    wildcards: sample=Donor1_T9_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:46 2022]
+Finished job 81.
+25 of 115 steps (22%) done
+
+[Thu Oct 20 01:34:46 2022]
+rule collect_consol_stub:
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R1.bin1.consol.stat
+    jobid: 78
+    wildcards: sample=Donor1_T1_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 01:34:46 2022]
+Finished job 78.
+26 of 115 steps (23%) done
+[Thu Oct 20 01:39:42 2022]
+Finished job 43.
+27 of 115 steps (23%) done
+
+[Thu Oct 20 01:39:42 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1_2.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T1_2.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.R2.bin1.primer.trim.log
+    jobid: 48
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:44:12 2022]
+Finished job 47.
+28 of 115 steps (24%) done
+
+[Thu Oct 20 01:44:12 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1_2.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.R1.bin1.trim.log
+    jobid: 40
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:50:23 2022]
+Finished job 45.
+29 of 115 steps (25%) done
+
+[Thu Oct 20 01:50:23 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9_2.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.R1.bin1.trim.log
+    jobid: 41
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 01:55:28 2022]
+Finished job 44.
+30 of 115 steps (26%) done
+
+[Thu Oct 20 01:55:28 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.R1.bin1.trim.log
+    jobid: 36
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:05:29 2022]
+Finished job 49.
+31 of 115 steps (27%) done
+
+[Thu Oct 20 02:05:29 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.R1.bin1.trim.log
+    jobid: 37
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:17:50 2022]
+Finished job 36.
+32 of 115 steps (28%) done
+
+[Thu Oct 20 02:17:50 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.R1.bin1.trim.log
+    jobid: 35
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:21:40 2022]
+Finished job 48.
+33 of 115 steps (29%) done
+
+[Thu Oct 20 02:21:40 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo_2.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.R1.bin1.trim.log
+    jobid: 39
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:22:42 2022]
+Finished job 37.
+34 of 115 steps (30%) done
+
+[Thu Oct 20 02:22:42 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Control.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.R2.bin1.primer.trim.log
+    jobid: 42
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:26:43 2022]
+Finished job 42.
+35 of 115 steps (30%) done
+
+[Thu Oct 20 02:26:43 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T1_2.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1_2.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.R2.bin1.odn.trim.log
+    jobid: 56
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:27:02 2022]
+Finished job 56.
+36 of 115 steps (31%) done
+
+[Thu Oct 20 02:27:02 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T9.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.R2.bin1.odn.trim.log
+    jobid: 53
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:27:19 2022]
+Finished job 53.
+37 of 115 steps (32%) done
+
+[Thu Oct 20 02:27:19 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.bin1.filt.log
+    jobid: 61
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=4000
+
+[Thu Oct 20 02:27:50 2022]
+Finished job 61.
+38 of 115 steps (33%) done
+
+[Thu Oct 20 02:27:50 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.R1.bin1.trim.log
+    jobid: 34
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:29:26 2022]
+Finished job 35.
+39 of 115 steps (34%) done
+
+[Thu Oct 20 02:29:26 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T1.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.R2.bin1.odn.trim.log
+    jobid: 52
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:29:41 2022]
+Finished job 52.
+40 of 115 steps (35%) done
+
+[Thu Oct 20 02:29:41 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.bin1.filt.log
+    jobid: 60
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=4000
+
+[Thu Oct 20 02:30:12 2022]
+Finished job 60.
+41 of 115 steps (36%) done
+
+[Thu Oct 20 02:30:12 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_T9_2.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9_2.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.R2.bin1.odn.trim.log
+    jobid: 57
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:30:27 2022]
+Finished job 57.
+42 of 115 steps (37%) done
+
+[Thu Oct 20 02:30:27 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1_2.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T1_2.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T1_2.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.bin1.umitag.log
+    jobid: 12
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:30:55 2022]
+Finished job 12.
+43 of 115 steps (37%) done
+
+[Thu Oct 20 02:30:55 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9_2.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T9_2.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T9_2.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.bin1.umitag.log
+    jobid: 13
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:31:21 2022]
+Finished job 13.
+44 of 115 steps (38%) done
+
+[Thu Oct 20 02:31:21 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T1.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T1.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T1.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.bin1.umitag.log
+    jobid: 8
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:31:23 2022]
+Finished job 34.
+45 of 115 steps (39%) done
+
+[Thu Oct 20 02:31:23 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_T9.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T9.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T9.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.bin1.umitag.log
+    jobid: 9
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:31:44 2022]
+Finished job 8.
+46 of 115 steps (40%) done
+
+[Thu Oct 20 02:31:44 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Oligo_2.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo_2.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.R2.bin1.odn.trim.log
+    jobid: 55
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:31:47 2022]
+Finished job 9.
+47 of 115 steps (41%) done
+
+[Thu Oct 20 02:31:47 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Oligo.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Oligo.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.bin1.umitag.log
+    jobid: 7
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:31:58 2022]
+Finished job 55.
+48 of 115 steps (42%) done
+
+[Thu Oct 20 02:31:58 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Oligo.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.R2.bin1.odn.trim.log
+    jobid: 51
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:31:59 2022]
+Finished job 40.
+49 of 115 steps (43%) done
+
+[Thu Oct 20 02:31:59 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T1_2.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.bin1.filt.log
+    jobid: 64
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=4000
+
+[Thu Oct 20 02:32:08 2022]
+Finished job 7.
+50 of 115 steps (43%) done
+
+[Thu Oct 20 02:32:08 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Oligo_2.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Oligo_2.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Oligo_2.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.bin1.umitag.log
+    jobid: 11
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:32:11 2022]
+Finished job 51.
+51 of 115 steps (44%) done
+
+[Thu Oct 20 02:32:11 2022]
+rule seq_trim_ic_read_primer:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control_2.R2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Control_2.R2.bin1.primer.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R2.bin1.primer.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.R2.bin1.primer.trim.log
+    jobid: 46
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=8000
+
+
+[Thu Oct 20 02:32:11 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.bin1.filt.log
+    jobid: 59
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=4000
+
+[Thu Oct 20 02:32:31 2022]
+Finished job 11.
+52 of 115 steps (45%) done
+
+[Thu Oct 20 02:32:31 2022]
+rule seq_trim_bp_read:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control_2.R1.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R1.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.R1.bin1.trim.log
+    jobid: 38
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:32:35 2022]
+Finished job 64.
+53 of 115 steps (46%) done
+[Thu Oct 20 02:32:38 2022]
+Finished job 59.
+54 of 115 steps (47%) done
+
+[Thu Oct 20 02:32:38 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Control.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Control.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.bin1.umitag.log
+    jobid: 6
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:32:43 2022]
+Finished job 46.
+55 of 115 steps (48%) done
+
+[Thu Oct 20 02:32:43 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Control_2.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control_2.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.R2.bin1.odn.trim.log
+    jobid: 54
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:32:51 2022]
+Finished job 6.
+56 of 115 steps (49%) done
+
+[Thu Oct 20 02:32:51 2022]
+rule seq_trim_ic_read_odn:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/primer/Donor1_Control.R2.bin1.primer.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control.R2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R2.bin1.trim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.R2.bin1.odn.trim.log
+    jobid: 50
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:32:51 2022]
+Finished job 54.
+57 of 115 steps (50%) done
+
+[Thu Oct 20 02:32:51 2022]
+rule collect_umitags:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/binned/Donor1_Control_2.I2.bin1.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Control_2.I2.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Control_2.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.bin1.umitags.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.bin1.umitag.log
+    jobid: 10
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=8000
+
+[Thu Oct 20 02:32:58 2022]
+Finished job 38.
+58 of 115 steps (50%) done
+
+[Thu Oct 20 02:32:58 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control_2.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.bin1.filt.log
+    jobid: 62
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=4000
+
+[Thu Oct 20 02:32:59 2022]
+Finished job 50.
+59 of 115 steps (51%) done
+
+[Thu Oct 20 02:32:59 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Control.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.bin1.filt.log
+    jobid: 58
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=4000
+
+[Thu Oct 20 02:33:01 2022]
+Finished job 10.
+60 of 115 steps (52%) done
+[Thu Oct 20 02:33:07 2022]
+Finished job 62.
+61 of 115 steps (53%) done
+
+[Thu Oct 20 02:33:07 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1_2.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.bin1.bwa.log
+    jobid: 113
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=20000
+
+[Thu Oct 20 02:33:09 2022]
+Finished job 58.
+62 of 115 steps (54%) done
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 81544 sequences (10000125 bp)...
+[M::process] read 81352 sequences (10000223 bp)...
+[Thu Oct 20 02:35:17 2022]
+Finished job 41.
+63 of 115 steps (55%) done
+
+[Thu Oct 20 02:35:17 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_T9_2.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.bin1.filt.log
+    jobid: 65
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=4000
+
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 34035, 5, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (138, 184, 231)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 417)
+[M::mem_pestat] mean and std.dev: (187.54, 76.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 510)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[Thu Oct 20 02:35:39 2022]
+Finished job 65.
+64 of 115 steps (56%) done
+[M::mem_process_seqs] Processed 81544 reads in 32.103 CPU sec, 31.939 real sec
+[M::process] read 81118 sequences (10000046 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 33873, 7, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (140, 186, 235)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 425)
+[M::mem_pestat] mean and std.dev: (190.66, 78.14)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 520)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 81352 reads in 31.795 CPU sec, 31.164 real sec
+[M::process] read 17250 sequences (2125661 bp)...
+[Thu Oct 20 02:36:24 2022]
+Finished job 39.
+65 of 115 steps (57%) done
+
+[Thu Oct 20 02:36:24 2022]
+rule seq_filter:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo_2.R1.bin1.trim.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/trimmed/Donor1_Oligo_2.R2.bin1.trim.fastq.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.bin1.filt.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.bin1.filt.log
+    jobid: 63
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=4000
+
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 33799, 3, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (142, 188, 237)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 427)
+[M::mem_pestat] mean and std.dev: (192.59, 78.47)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 522)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[Thu Oct 20 02:36:41 2022]
+Finished job 63.
+66 of 115 steps (57%) done
+
+[Thu Oct 20 02:36:41 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.bin1.bwa.log
+    jobid: 110
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=20000
+
+[M::mem_process_seqs] Processed 81118 reads in 30.020 CPU sec, 29.530 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 7269, 1, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (142, 190, 238)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 430)
+[M::mem_pestat] mean and std.dev: (192.87, 78.28)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 526)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 17250 reads in 6.892 CPU sec, 6.441 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1_2.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1_2.R1.bin1.filt.fastq.gz
+[main] Real time: 221.912 sec; CPU: 104.052 sec
+[Thu Oct 20 02:36:49 2022]
+Finished job 113.
+67 of 115 steps (58%) done
+
+[Thu Oct 20 02:36:49 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1_2.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1_2.bin1.bam
+    jobid: 102
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 02:36:49 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9_2.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.bin1.bwa.log
+    jobid: 114
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=20000
+
+[Thu Oct 20 02:37:00 2022]
+Finished job 102.
+68 of 115 steps (59%) done
+
+[Thu Oct 20 02:37:00 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1_2.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1_2.bin1.bai
+    jobid: 103
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=2000
+
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[Thu Oct 20 02:37:04 2022]
+Finished job 103.
+69 of 115 steps (60%) done
+[M::process] read 85128 sequences (10000117 bp)...
+[M::process] read 84446 sequences (10000180 bp)...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 80528 sequences (10000220 bp)...
+[M::process] read 79780 sequences (9969102 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 35167, 9, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (132, 165, 203)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 345)
+[M::mem_pestat] mean and std.dev: (168.41, 57.77)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 416)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 32852, 8, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (138, 173, 214)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 366)
+[M::mem_pestat] mean and std.dev: (177.41, 61.54)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 442)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 85128 reads in 28.032 CPU sec, 27.880 real sec
+[M::process] read 23738 sequences (2752338 bp)...
+[M::mem_process_seqs] Processed 80528 reads in 31.994 CPU sec, 31.835 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 34924, 6, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (135, 168, 208)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 354)
+[M::mem_pestat] mean and std.dev: (172.09, 60.02)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 427)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 84446 reads in 28.645 CPU sec, 28.094 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 32413, 4, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (143, 179, 222)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 380)
+[M::mem_pestat] mean and std.dev: (184.05, 64.77)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 459)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 9802, 3, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 166, 205)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 349)
+[M::mem_pestat] mean and std.dev: (169.91, 59.02)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 421)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 23738 reads in 8.574 CPU sec, 7.985 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9.R1.bin1.filt.fastq.gz
+[main] Real time: 89.605 sec; CPU: 69.205 sec
+[Thu Oct 20 02:38:11 2022]
+Finished job 110.
+70 of 115 steps (61%) done
+
+[Thu Oct 20 02:38:11 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1_2.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1_2.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1_2.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1_2.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1_2.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.bin1.samqc.log
+    jobid: 23
+    wildcards: sample=Donor1_T1_2, bin=bin1
+    resources: mem_mb=16000
+
+
+[Thu Oct 20 02:38:11 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9.bin1.bam
+    jobid: 96
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 02:38:18 2022]
+Finished job 96.
+71 of 115 steps (62%) done
+
+[Thu Oct 20 02:38:18 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9.bin1.bai
+    jobid: 97
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=2000
+
+[M::mem_process_seqs] Processed 79780 reads in 34.253 CPU sec, 33.769 real sec
+[Thu Oct 20 02:38:21 2022]
+Finished job 97.
+72 of 115 steps (63%) done
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9_2.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T9_2.R1.bin1.filt.fastq.gz
+[main] Real time: 93.105 sec; CPU: 70.973 sec
+[Thu Oct 20 02:38:22 2022]
+Finished job 114.
+73 of 115 steps (63%) done
+
+[Thu Oct 20 02:38:22 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.bin1.samqc.log
+    jobid: 20
+    wildcards: sample=Donor1_T9, bin=bin1
+    resources: mem_mb=16000
+
+
+[Thu Oct 20 02:38:22 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9_2.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9_2.bin1.bam
+    jobid: 104
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 02:38:29 2022]
+Finished job 104.
+74 of 115 steps (64%) done
+
+[Thu Oct 20 02:38:29 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9_2.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9_2.bin1.bai
+    jobid: 105
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 02:38:31 2022]
+Finished job 105.
+75 of 115 steps (65%) done
+[Thu Oct 20 02:50:36 2022]
+Finished job 20.
+76 of 115 steps (66%) done
+
+[Thu Oct 20 02:50:36 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9_2.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T9_2.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9_2.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9_2.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9_2.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.bin1.samqc.log
+    jobid: 24
+    wildcards: sample=Donor1_T9_2, bin=bin1
+    resources: mem_mb=16000
+
+[Thu Oct 20 02:53:27 2022]
+Finished job 23.
+77 of 115 steps (67%) done
+
+[Thu Oct 20 02:53:27 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.bin1.bwa.log
+    jobid: 109
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=20000
+
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 88858 sequences (10000174 bp)...
+[M::process] read 76658 sequences (8645264 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 36798, 13, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (128, 173, 211)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 377)
+[M::mem_pestat] mean and std.dev: (170.72, 69.56)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 460)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (90, 169, 234)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 522)
+[M::mem_pestat] mean and std.dev: (162.31, 82.77)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 666)
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation RF
+[M::mem_process_seqs] Processed 88858 reads in 27.053 CPU sec, 26.912 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 31717, 9, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (131, 173, 213)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 377)
+[M::mem_pestat] mean and std.dev: (172.91, 70.24)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 459)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 76658 reads in 23.904 CPU sec, 23.455 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_T1.R1.bin1.filt.fastq.gz
+[main] Real time: 72.070 sec; CPU: 54.882 sec
+[Thu Oct 20 02:54:40 2022]
+Finished job 109.
+78 of 115 steps (68%) done
+
+[Thu Oct 20 02:54:40 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1.bin1.bam
+    jobid: 94
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 02:54:40 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo_2.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.bin1.bwa.log
+    jobid: 112
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=20000
+
+[Thu Oct 20 02:54:46 2022]
+Finished job 94.
+79 of 115 steps (69%) done
+
+[Thu Oct 20 02:54:46 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1.bin1.bai
+    jobid: 95
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 02:54:48 2022]
+Finished job 95.
+80 of 115 steps (70%) done
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 80348 sequences (10000118 bp)...
+[M::process] read 38010 sequences (4748517 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 32335, 28, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (148, 185, 230)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 394)
+[M::mem_pestat] mean and std.dev: (189.86, 69.45)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 476)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (83, 83, 117)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (15, 185)
+[M::mem_pestat] mean and std.dev: (95.67, 31.39)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 221)
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation RF
+[M::mem_process_seqs] Processed 80348 reads in 33.266 CPU sec, 33.183 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 15339, 8, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (152, 187, 234)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 398)
+[M::mem_pestat] mean and std.dev: (193.56, 69.59)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 480)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 38010 reads in 16.550 CPU sec, 15.996 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo_2.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo_2.R1.bin1.filt.fastq.gz
+[main] Real time: 72.325 sec; CPU: 53.653 sec
+[Thu Oct 20 02:55:52 2022]
+Finished job 112.
+81 of 115 steps (70%) done
+
+[Thu Oct 20 02:55:52 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo_2.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo_2.bin1.bam
+    jobid: 100
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 02:55:52 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_T1.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.bin1.samqc.log
+    jobid: 19
+    wildcards: sample=Donor1_T1, bin=bin1
+    resources: mem_mb=16000
+
+[Thu Oct 20 02:55:56 2022]
+Finished job 100.
+82 of 115 steps (71%) done
+
+[Thu Oct 20 02:55:56 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo_2.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo_2.bin1.bai
+    jobid: 101
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 02:55:58 2022]
+Finished job 101.
+83 of 115 steps (72%) done
+[Thu Oct 20 02:59:39 2022]
+Finished job 24.
+84 of 115 steps (73%) done
+
+[Thu Oct 20 02:59:39 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo_2.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo_2.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo_2.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo_2.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo_2.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.bin1.samqc.log
+    jobid: 22
+    wildcards: sample=Donor1_Oligo_2, bin=bin1
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:05:04 2022]
+Finished job 19.
+85 of 115 steps (74%) done
+
+[Thu Oct 20 03:05:04 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1_2.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_T1_2.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1_2.multihits.log
+    jobid: 88
+    wildcards: sample=Donor1_T1_2
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:08:02 2022]
+Finished job 22.
+86 of 115 steps (75%) done
+
+[Thu Oct 20 03:08:02 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.bin1.bwa.log
+    jobid: 108
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=20000
+
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 87692 sequences (9887593 bp)...
+[Thu Oct 20 03:08:26 2022]
+Finished job 88.
+87 of 115 steps (76%) done
+
+[Thu Oct 20 03:08:26 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo_2.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_Oligo_2.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo_2.multihits.log
+    jobid: 87
+    wildcards: sample=Donor1_Oligo_2
+    resources: mem_mb=16000
+
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 35570, 15, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (139, 177, 212)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 358)
+[M::mem_pestat] mean and std.dev: (174.54, 65.26)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 436)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (25, 25, 133)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 349)
+[M::mem_pestat] mean and std.dev: (66.20, 59.50)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 457)
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation RF
+[M::mem_process_seqs] Processed 87692 reads in 25.046 CPU sec, 25.055 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Oligo.R1.bin1.filt.fastq.gz
+[main] Real time: 47.593 sec; CPU: 29.206 sec
+[Thu Oct 20 03:08:49 2022]
+Finished job 108.
+88 of 115 steps (77%) done
+
+[Thu Oct 20 03:08:49 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo.bin1.bam
+    jobid: 92
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 03:08:49 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_T9.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9.multihits.log
+    jobid: 85
+    wildcards: sample=Donor1_T9
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:08:52 2022]
+Finished job 92.
+89 of 115 steps (77%) done
+
+[Thu Oct 20 03:08:52 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo.bin1.bai
+    jobid: 93
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 03:08:53 2022]
+Finished job 93.
+90 of 115 steps (78%) done
+[Thu Oct 20 03:09:44 2022]
+Finished job 87.
+91 of 115 steps (79%) done
+
+[Thu Oct 20 03:09:44 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Oligo.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.bin1.samqc.log
+    jobid: 18
+    wildcards: sample=Donor1_Oligo, bin=bin1
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:14:35 2022]
+Finished job 18.
+92 of 115 steps (80%) done
+
+[Thu Oct 20 03:14:35 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9_2.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_T9_2.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T9_2.multihits.log
+    jobid: 89
+    wildcards: sample=Donor1_T9_2
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:24:47 2022]
+Finished job 89.
+93 of 115 steps (81%) done
+
+[Thu Oct 20 03:24:47 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_T1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_T1.multihits.log
+    jobid: 84
+    wildcards: sample=Donor1_T1
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:25:25 2022]
+Finished job 85.
+94 of 115 steps (82%) done
+
+[Thu Oct 20 03:25:25 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_Oligo.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Oligo.multihits.log
+    jobid: 83
+    wildcards: sample=Donor1_Oligo
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:26:21 2022]
+Finished job 83.
+95 of 115 steps (83%) done
+
+[Thu Oct 20 03:26:21 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control_2.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control_2.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control_2.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.bin1.bwa.log
+    jobid: 111
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=20000
+
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 2674 sequences (355591 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 1296, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (266, 266, 266)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (266, 266)
+[M::mem_pestat] mean and std.dev: (266.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (266, 266)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 2674 reads in 0.352 CPU sec, 0.372 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control_2.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control_2.R1.bin1.filt.fastq.gz
+[main] Real time: 20.397 sec; CPU: 3.993 sec
+[Thu Oct 20 03:26:41 2022]
+Finished job 111.
+96 of 115 steps (83%) done
+
+[Thu Oct 20 03:26:41 2022]
+rule align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control.R1.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control.R2.bin1.filt.fastq.gz, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.fasta, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.amb, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.ann, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.bwt, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.pac, /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38.sa
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control.bin1.unsorted.bam
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.bin1.bwa.log
+    jobid: 107
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=20000
+
+
+[Thu Oct 20 03:26:41 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control_2.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control_2.bin1.bam
+    jobid: 98
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 03:26:41 2022]
+Finished job 98.
+97 of 115 steps (84%) done
+
+[Thu Oct 20 03:26:41 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control_2.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control_2.bin1.bai
+    jobid: 99
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 03:26:42 2022]
+Finished job 99.
+98 of 115 steps (85%) done
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 388 sequences (12416 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 0, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 388 reads in 0.000 CPU sec, 0.004 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -k 30 -w 2500 -P -L 25 -a /mnt/c/Raw_Datas/github/iGUIDE/genomes/hg38 /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control.R2.bin1.filt.fastq.gz /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/filtered/Donor1_Control.R1.bin1.filt.fastq.gz
+[main] Real time: 21.974 sec; CPU: 3.819 sec
+[Thu Oct 20 03:27:03 2022]
+Finished job 107.
+99 of 115 steps (86%) done
+
+[Thu Oct 20 03:27:03 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control_2.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control_2.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control_2.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control_2.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control_2.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.bin1.samqc.log
+    jobid: 21
+    wildcards: sample=Donor1_Control_2, bin=bin1
+    resources: mem_mb=16000
+
+
+[Thu Oct 20 03:27:03 2022]
+rule sort_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control.bin1.unsorted.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control.bin1.bam
+    jobid: 90
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 03:27:03 2022]
+Finished job 90.
+100 of 115 steps (87%) done
+
+[Thu Oct 20 03:27:03 2022]
+rule index_bam:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control.bin1.bam
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control.bin1.bai
+    jobid: 91
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=2000
+
+[Thu Oct 20 03:27:04 2022]
+Finished job 91.
+101 of 115 steps (88%) done
+[Thu Oct 20 03:27:15 2022]
+Finished job 21.
+102 of 115 steps (89%) done
+
+[Thu Oct 20 03:27:15 2022]
+rule post_align:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control.bin1.bam, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/align/Donor1_Control.bin1.bai
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control.bin1.chimera.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control.bin1.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.bin1.align.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.bin1.samqc.log
+    jobid: 17
+    wildcards: sample=Donor1_Control, bin=bin1
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:27:25 2022]
+Finished job 17.
+103 of 115 steps (90%) done
+
+[Thu Oct 20 03:27:25 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_Control.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control.multihits.log
+    jobid: 82
+    wildcards: sample=Donor1_Control
+    resources: mem_mb=16000
+
+
+[Thu Oct 20 03:27:25 2022]
+rule all_uniq_sites:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control_2.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Oligo_2.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T1_2.bin1.uniq.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_T9_2.bin1.uniq.csv
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/unique_sites.run9_1_Avance_T1_T9_bwa.csv
+    jobid: 5
+    resources: mem_mb=2000
+
+[Thu Oct 20 03:27:28 2022]
+Finished job 5.
+104 of 115 steps (90%) done
+[Thu Oct 20 03:27:28 2022]
+Finished job 82.
+105 of 115 steps (91%) done
+
+[Thu Oct 20 03:27:28 2022]
+rule assimilate_sites:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/unique_sites.run9_1_Avance_T1_T9_bwa.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Control.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Oligo.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T1.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T9.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Control_2.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_Oligo_2.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T1_2.bin1.umitags.fasta.gz, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/indices/Donor1_T9_2.bin1.umitags.fasta.gz
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/incorp_sites.run9_1_Avance_T1_T9_bwa.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/run9_1_Avance_T1_T9_bwa.assim.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.assim.log
+    jobid: 1
+    resources: mem_mb=16000
+
+[33mJob counts:
+	count	jobs
+	1	assimilate_sites
+	1[0m
+[Thu Oct 20 03:27:31 2022]
+Finished job 84.
+106 of 115 steps (92%) done
+
+[Thu Oct 20 03:27:31 2022]
+rule combine_multihits:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/post_align/Donor1_Control_2.bin1.multihits.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/multihits/Donor1_Control_2.multihits.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.multihits.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/Donor1_Control_2.multihits.log
+    jobid: 86
+    wildcards: sample=Donor1_Control_2
+    resources: mem_mb=16000
+
+[Thu Oct 20 03:27:33 2022]
+Finished job 86.
+107 of 115 steps (93%) done
+[Thu Oct 20 03:28:04 2022]
+Finished job 1.
+108 of 115 steps (94%) done
+
+[Thu Oct 20 03:28:04 2022]
+rule core_stat_matrix:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/run9_1_Avance_T1_T9_bwa.demulti.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R1.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R2.bin1.primer.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R2.bin1.trim.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.bin1.umitags.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.bin1.filt.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R1.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.R2.bin1.consol.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.bin1.align.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Control_2.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_Oligo_2.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T1_2.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/Donor1_T9_2.multihits.stat, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/process_data/stats/run9_1_Avance_T1_T9_bwa.assim.stat
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/stats.core.run9_1_Avance_T1_T9_bwa.csv
+    jobid: 15
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 03:28:04 2022]
+rule iguide_evaluation:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/incorp_sites.run9_1_Avance_T1_T9_bwa.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/iguide.eval.run9_1_Avance_T1_T9_bwa.rds, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/run9_1_Avance_T1_T9_bwa.eval.stat
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.eval.log
+    jobid: 14
+    resources: mem_mb=8000
+
+[33mJob counts:
+	count	jobs
+	1	iguide_evaluation
+	1[0m
+[Thu Oct 20 03:28:06 2022]
+Finished job 15.
+109 of 115 steps (95%) done
+[Thu Oct 20 03:43:10 2022]
+Finished job 14.
+110 of 115 steps (96%) done
+
+[Thu Oct 20 03:43:10 2022]
+rule run_summary:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/iguide.eval.run9_1_Avance_T1_T9_bwa.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/reports/summary.run9_1_Avance_T1_T9_bwa.txt
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.summary.log
+    jobid: 3
+    resources: mem_mb=4000
+
+
+[Thu Oct 20 03:43:10 2022]
+rule eval_stat_matrix:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/run9_1_Avance_T1_T9_bwa.eval.stat
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/stats.eval.run9_1_Avance_T1_T9_bwa.csv
+    jobid: 16
+    resources: mem_mb=2000
+
+
+[Thu Oct 20 03:43:10 2022]
+rule run_report:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/iguide.eval.run9_1_Avance_T1_T9_bwa.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/reports/report.run9_1_Avance_T1_T9_bwa.html
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.report.log
+    jobid: 2
+    resources: mem_mb=4000
+
+[Thu Oct 20 03:43:12 2022]
+Finished job 16.
+111 of 115 steps (97%) done
+
+[Thu Oct 20 03:43:12 2022]
+rule gen_stat_report:
+    input: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/stats.core.run9_1_Avance_T1_T9_bwa.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/stats.eval.run9_1_Avance_T1_T9_bwa.csv, /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/incorp_sites.run9_1_Avance_T1_T9_bwa.rds
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/reports/runstats.run9_1_Avance_T1_T9_bwa.html
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.runstats.log
+    jobid: 4
+    resources: mem_mb=4000
+
+[Thu Oct 20 03:43:17 2022]
+Finished job 4.
+112 of 115 steps (97%) done
+[Thu Oct 20 03:44:17 2022]
+Finished job 3.
+113 of 115 steps (98%) done
+[Fri Oct 21 03:51:39 2022]
+Error in rule run_report:
+    jobid: 2
+    output: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/reports/report.run9_1_Avance_T1_T9_bwa.html
+    log: /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.report.log (check log file(s) for error message)
+    shell:
+        
+    Rscript /mnt/c/Raw_Datas/github/iGUIDE/tools/rscripts/generate_iGUIDE_report.R /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/output/iguide.eval.run9_1_Avance_T1_T9_bwa.rds -o /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/reports/report.run9_1_Avance_T1_T9_bwa.html -b -f -d -g  > /mnt/c/Raw_Datas/github/iGUIDE/analysis/run9_1_Avance_T1_T9_bwa/logs/run9_1_Avance_T1_T9_bwa.report.log 2>&1
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Job failed, going on with independent jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/c/Raw_Datas/github/iGUIDE/.snakemake/log/2022-10-20T011929.328023.snakemake.log

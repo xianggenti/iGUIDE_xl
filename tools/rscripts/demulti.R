@@ -746,7 +746,9 @@ if( args$poolreps ){
 
 cat(paste0("Reads to be written to files: ", nrow(multiplexed_data), "\n"))
 
+gc() #try to save memory
 # Write files to read files to outfolder directory ----
+
 if( args$cores > 1 ){
   
   cluster <- parallel::makeCluster(min(c(parallel::detectCores(), args$cores)))

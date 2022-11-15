@@ -1,0 +1,9 @@
+specimen,gRNA,nuclease
+C1plus,T1.TRAC;T9.FOXP3,Cas9
+C2plus,T1.TRAC;T9.FOXP3,Cas9
+C3plus,T1.TRAC,Cas9
+C4plus,T9.FOXP3,Cas9
+C1neg,T1.TRAC;T9.FOXP3,Cas9
+C2neg,T1.TRAC;T9.FOXP3,Cas9
+C3neg,T1.TRAC,Cas9
+C4neg,T9.FOXP3,Cas9
