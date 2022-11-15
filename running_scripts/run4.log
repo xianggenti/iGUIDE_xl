@@ -1,0 +1,239 @@
+Sample file '/home/ec2-user/Processed_Data/Run4/Undetermined_S0_R1_001.fastq.gz' found.
+Sample file '/home/ec2-user/Processed_Data/Run4/Undetermined_S0_R2_001.fastq.gz' found.
+Sample file '/home/ec2-user/Processed_Data/Run4/Undetermined_S0_I1_001.fastq.gz' found.
+Sample file '/home/ec2-user/Processed_Data/Run4/Undetermined_S0_I2_001.fastq.gz' found.
+  'run4_Avance_T1_T9_bwa' setup has completed.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 14
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=110000
+Job counts:
+	count	jobs
+	8	align
+	1	all
+	1	all_uniq_sites
+	1	assimilate_sites
+	8	bin_passing_reads
+	16	collect_consol_stub
+	8	collect_umitags
+	8	combine_multihits
+	1	core_stat_matrix
+	1	demultiplex
+	1	eval_stat_matrix
+	1	gen_stat_report
+	1	iguide_evaluation
+	8	index_bam
+	1	move_demulti_stat
+	8	post_align
+	1	run_report
+	1	run_summary
+	8	seq_filter
+	8	seq_trim_bp_read
+	8	seq_trim_ic_read_odn
+	8	seq_trim_ic_read_primer
+	8	sort_bam
+	115
+
+[Wed Oct 19 20:03:14 2022]
+rule demultiplex:
+    input: /home/ec2-user/Processed_Data/iGUIDE_xl/running_scripts/Run4/run4_Avance_T1_T9.sampleInfo.csv, /home/ec2-user/Processed_Data/Run4/Undetermined_S0_R1_001.fastq.gz, /home/ec2-user/Processed_Data/Run4/Undetermined_S0_R2_001.fastq.gz, /home/ec2-user/Processed_Data/Run4/Undetermined_S0_I1_001.fastq.gz, /home/ec2-user/Processed_Data/Run4/Undetermined_S0_I2_001.fastq.gz
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/run4_Avance_T1_T9_bwa.demulti.stat
+    log: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/logs/demultiplex.run4_Avance_T1_T9_bwa.log
+    jobid: 106
+    threads: 14
+    resources: mem_mb=30000
+
+/usr/bin/bash: line 1:  1487 Killed                  Rscript /home/ec2-user/Processed_Data/iGUIDE_xl/tools/rscripts/demulti.R -m /home/ec2-user/Processed_Data/iGUIDE_xl/running_scripts/Run4/run4_Avance_T1_T9.sampleInfo.csv --read1 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_R1_001.fastq.gz --read2 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_R2_001.fastq.gz --idx1 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_I1_001.fastq.gz --idx2 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_I2_001.fastq.gz --bc1 I1 --bc1Len 8 --bc2 I2 --bc2Len 8 --bc1Mis 0 --bc2Mis 0 --maxN 1 -o /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti --stat run4_Avance_T1_T9_bwa.demulti.stat -c 14 --readNamePattern '[\w\:\-\+]+' --compress > /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/logs/demultiplex.run4_Avance_T1_T9_bwa.log 2>&1
+[Wed Oct 19 20:42:23 2022]
+Error in rule demultiplex:
+    jobid: 106
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T1_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_T9_2.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/ambiguous.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/degenerate.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.R2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.I1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/unassigned.I2.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/run4_Avance_T1_T9_bwa.demulti.stat
+    log: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/logs/demultiplex.run4_Avance_T1_T9_bwa.log (check log file(s) for error message)
+    shell:
+        
+    Rscript /home/ec2-user/Processed_Data/iGUIDE_xl/tools/rscripts/demulti.R -m /home/ec2-user/Processed_Data/iGUIDE_xl/running_scripts/Run4/run4_Avance_T1_T9.sampleInfo.csv       --read1 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_R1_001.fastq.gz --read2 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_R2_001.fastq.gz       --idx1 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_I1_001.fastq.gz --idx2 /home/ec2-user/Processed_Data/Run4/Undetermined_S0_I2_001.fastq.gz       --bc1 I1 --bc1Len 8       --bc2 I2 --bc2Len 8       --bc1Mis 0 --bc2Mis 0 --maxN 1       -o /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti --stat run4_Avance_T1_T9_bwa.demulti.stat -c 14       --readNamePattern '[\w\:\-\+]+' --compress > /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/logs/demultiplex.run4_Avance_T1_T9_bwa.log 2>&1
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job demultiplex since they might be corrupted:
+/home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Control.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/Donor2_Oligo.R1.fastq.gz, /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/demulti/run4_Avance_T1_T9_bwa.demulti.stat
+Job failed, going on with independent jobs.
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T1.R2.bin1.consol.stat
+    jobid: 71
+    wildcards: sample=Donor2_T1, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T1.R1.bin1.consol.stat
+    jobid: 70
+    wildcards: sample=Donor2_T1, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Oligo_2.R1.bin1.consol.stat
+    jobid: 76
+    wildcards: sample=Donor2_Oligo_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Control.R2.bin1.consol.stat
+    jobid: 67
+    wildcards: sample=Donor2_Control, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T1_2.R1.bin1.consol.stat
+    jobid: 78
+    wildcards: sample=Donor2_T1_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T9_2.R1.bin1.consol.stat
+    jobid: 80
+    wildcards: sample=Donor2_T9_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Oligo.R2.bin1.consol.stat
+    jobid: 69
+    wildcards: sample=Donor2_Oligo, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Control_2.R2.bin1.consol.stat
+    jobid: 75
+    wildcards: sample=Donor2_Control_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T1_2.R2.bin1.consol.stat
+    jobid: 79
+    wildcards: sample=Donor2_T1_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:23 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T9.R1.bin1.consol.stat
+    jobid: 72
+    wildcards: sample=Donor2_T9, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Wed Oct 19 20:42:23 2022]
+Finished job 76.
+1 of 115 steps (0.87%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 67.
+2 of 115 steps (2%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 70.
+3 of 115 steps (3%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 75.
+4 of 115 steps (3%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 78.
+5 of 115 steps (4%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 69.
+6 of 115 steps (5%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 79.
+7 of 115 steps (6%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 72.
+8 of 115 steps (7%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 80.
+9 of 115 steps (8%) done
+[Wed Oct 19 20:42:23 2022]
+Finished job 71.
+10 of 115 steps (9%) done
+
+[Wed Oct 19 20:42:24 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Oligo_2.R2.bin1.consol.stat
+    jobid: 77
+    wildcards: sample=Donor2_Oligo_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:24 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Control.R1.bin1.consol.stat
+    jobid: 66
+    wildcards: sample=Donor2_Control, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:24 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T9_2.R2.bin1.consol.stat
+    jobid: 81
+    wildcards: sample=Donor2_T9_2, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Wed Oct 19 20:42:24 2022]
+Finished job 77.
+11 of 115 steps (10%) done
+
+[Wed Oct 19 20:42:24 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Oligo.R1.bin1.consol.stat
+    jobid: 68
+    wildcards: sample=Donor2_Oligo, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+[Wed Oct 19 20:42:24 2022]
+Finished job 66.
+12 of 115 steps (10%) done
+[Wed Oct 19 20:42:24 2022]
+Finished job 81.
+13 of 115 steps (11%) done
+
+[Wed Oct 19 20:42:24 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_Control_2.R1.bin1.consol.stat
+    jobid: 74
+    wildcards: sample=Donor2_Control_2, read=R1, bin=bin1
+    resources: mem_mb=2000
+
+
+[Wed Oct 19 20:42:24 2022]
+rule collect_consol_stub:
+    output: /home/ec2-user/Processed_Data/iGUIDE_xl/analysis/run4_Avance_T1_T9_bwa/process_data/stats/Donor2_T9.R2.bin1.consol.stat
+    jobid: 73
+    wildcards: sample=Donor2_T9, read=R2, bin=bin1
+    resources: mem_mb=2000
+
+[Wed Oct 19 20:42:24 2022]
+Finished job 68.
+14 of 115 steps (12%) done
+[Wed Oct 19 20:42:24 2022]
+Finished job 74.
+15 of 115 steps (13%) done
+[Wed Oct 19 20:42:24 2022]
+Finished job 73.
+16 of 115 steps (14%) done
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/ec2-user/Processed_Data/iGUIDE_xl/.snakemake/log/2022-10-19T200313.566531.snakemake.log
